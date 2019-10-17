@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "214030855388",
+    "firebase_url": "https://dia-euro.firebaseio.com",
+    "project_id": "dia-euro",
+    "storage_bucket": "dia-euro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:214030855388:android:38cdf8ed14577617c21819",
+        "android_client_info": {
+          "package_name": "com.example.edgar.diaeuro"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "214030855388-vjmhh9c58mpb8qdm951i2k78dva9g3p8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKfdFcNlTftzeIf24no6cyDLf3PiRpyes"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "214030855388-vjmhh9c58mpb8qdm951i2k78dva9g3p8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
