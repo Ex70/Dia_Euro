@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "214030855388-qagd5r1rftd0a0nrqko2dqd8jaafbnnc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.edgar.diaeuro",
+            "certificate_hash": "2e6019460f7303aae11ea2ea1ad0a20239ed2010"
+          }
+        },
+        {
           "client_id": "214030855388-vjmhh9c58mpb8qdm951i2k78dva9g3p8.apps.googleusercontent.com",
           "client_type": 3
         }
