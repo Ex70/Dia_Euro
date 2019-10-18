@@ -3,5 +3,6 @@
 
     <string name="facebook_application_id" translatable="false">2324376421206300</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb2324376421206300</string>
+    <string name="firebase_login">Acceder con Google</string>
 
 </resources>
