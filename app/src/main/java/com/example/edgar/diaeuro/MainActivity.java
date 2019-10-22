@@ -44,20 +44,18 @@ public class MainActivity extends AppCompatActivity {
 
     private static final int MY_REQUEST_CODE = 7117; //Puede ser cualquiera
     List<AuthUI.IdpConfig> providers;
-    EditText edt_title, edt_content;
+    EditText lugarOrigen, telCasa;
     Button btn_sign_out, btn_post,btn_update,btn_delete;
     TextView nombre,correo,celular;
     ImageView perfil;
     RecyclerView recyclerView;
     ViewGroup viewGroup;
+    String name,email,selectedKey;
+    Post selectedPost;
 
     //Firebase
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
-
-    Post selectedPost;
-    String selectedKey;
-
     FirebaseRecyclerOptions<Post> options;
     FirebaseRecyclerAdapter<Post,MyRecyclerViewHolder> adapter;
 
@@ -67,16 +65,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        edt_content = (EditText)findViewById(R.id.edt_content);
-        edt_title = (EditText)findViewById(R.id.edt_title);
+        telCasa = (EditText)findViewById(R.id.euro_telCasa);
+        lugarOrigen = (EditText)findViewById(R.id.euro_origen);
         btn_post = (Button)findViewById(R.id.btn_post);
         btn_update = (Button)findViewById(R.id.btn_update);
         btn_delete = (Button)findViewById(R.id.btn_delete);
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
         btn_sign_out =(Button)findViewById(R.id.btn_sign_out);
         nombre = (TextView)findViewById(R.id.nombre);
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
         correo = (TextView)findViewById(R.id.correo);
         celular = (TextView)findViewById(R.id.celular);
         perfil = (ImageView)findViewById(R.id.perfil);
@@ -103,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_update.setOnClickListener(new View.OnClickListener() {
+        /*btn_update.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 databaseReference.child(selectedKey).setValue(new Post(edt_title.getText().toString(),edt_content.getText().toString()))
@@ -120,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
                 });
 
             }
-        });
+        });*/
 
         btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,10 +180,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void postComment() {
-        String title = edt_title.getText().toString();
-        String content = edt_content.getText().toString();
+        String lugar = lugarOrigen.getText().toString();
+        String tcasa = telCasa.getText().toString();
+        name = (String) nombre.getText();
+        email = (String) correo.getText();
 
-        Post post = new Post(title,content);
+        Post post = new Post(lugar,tcasa,name,email);
 
         databaseReference.push() //Usar el método para crear un id unico
         .setValue(post);
@@ -214,8 +213,8 @@ public class MainActivity extends AppCompatActivity {
                                 Log.d("KEY Item",""+selectedKey);
 
                                 //Bind data
-                                edt_content.setText(model.getContent());
-                                edt_title.setText(model.getTitle());
+                                telCasa.setText(model.getContent());
+                                lugarOrigen.setText(model.getTitle());
                             }
                         });
                     }
@@ -250,8 +249,8 @@ public class MainActivity extends AppCompatActivity {
             if(resultCode == RESULT_OK){
                 //Obtener Usuario
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                //String name = user.getDisplayName();
-                //String email = user.getEmail();
+                String name = user.getDisplayName();
+                String email = user.getEmail();
                 String photo = String.valueOf(user.getPhotoUrl());
 
                 Picasso.get().load(user.getPhotoUrl()).into(perfil);

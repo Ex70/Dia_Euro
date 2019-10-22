@@ -14,10 +14,8 @@
         android:layout_height="100dp"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:contentDescription="@string/app_name" />
-
-
 
     <TextView
         android:id="@+id/nombre"
@@ -25,7 +23,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="16sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/perfil"
         android:gravity="center" />
 
@@ -35,7 +33,7 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="16sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/nombre"
         android:gravity="center" />
 
@@ -45,23 +43,51 @@
         android:layout_height="wrap_content"
         android:textColor="@android:color/holo_blue_light"
         android:textSize="16sp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/correo"
         android:gravity="center" />
 
-    <EditText
-        android:id="@+id/edt_title"
-        android:hint="Title"
-        android:inputType="text"
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/edt_content"
-        android:hint="Content"
-        android:inputType="textMultiLine"
+        <EditText
+            android:id="@+id/euro_origen"
+            android:hint="Lugar de origen"
+            android:inputType="text"
+            android:singleLine="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/euro_telCasa"
+            android:hint="Teléfono de casa"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        app:counterEnabled="true"
+        app:counterMaxLength="10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/edt_content"
+            android:hint="Teléfono celular"
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
         android:orientation="horizontal"
