@@ -1,10 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/background"
     tools:context=".MainActivity">
+
+    <ImageView
+        android:id="@+id/perfil"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:contentDescription="@string/app_name" />
+
+
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/perfil"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/correo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/nombre"
+        android:gravity="center" />
+
+    <TextView
+        android:id="@+id/celular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_light"
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/correo"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/edt_title"
+        android:hint="Title"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/edt_content"
+        android:hint="Content"
+        android:inputType="textMultiLine"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_post"
+            android:text="POST"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_update"
+            android:text="UPDATE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/btn_delete"
+            android:text="DELETE"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
     <Button
         android:id="@+id/btn_sign_out"
@@ -14,4 +102,4 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></Button>
 
-</RelativeLayout>
+</LinearLayout>
