@@ -2,8 +2,9 @@ package com.example.edgar.diaeuro;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.LayoutInflater;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.util.Patterns;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -24,27 +25,26 @@ import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.squareup.picasso.Picasso;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.regex.Pattern;
 
 //import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
     private static final int MY_REQUEST_CODE = 7117; //Puede ser cualquiera
+    private TextInputLayout tilOrigen,tilTelCasa,tilTelCelular;
     List<AuthUI.IdpConfig> providers;
-    EditText lugarOrigen, telCasa;
+    EditText lugarOrigen, telCasa, telCelular;
     Button btn_sign_out, btn_post,btn_update,btn_delete;
     TextView nombre,correo,celular;
     ImageView perfil;
@@ -67,9 +67,10 @@ public class MainActivity extends AppCompatActivity {
 
         telCasa = (EditText)findViewById(R.id.euro_telCasa);
         lugarOrigen = (EditText)findViewById(R.id.euro_origen);
+        telCelular = (EditText)findViewById(R.id.euro_telCelular);
         btn_post = (Button)findViewById(R.id.btn_post);
-        btn_update = (Button)findViewById(R.id.btn_update);
-        btn_delete = (Button)findViewById(R.id.btn_delete);
+        //btn_update = (Button)findViewById(R.id.btn_update);
+        //btn_delete = (Button)findViewById(R.id.btn_delete);
         btn_sign_out =(Button)findViewById(R.id.btn_sign_out);
         nombre = (TextView)findViewById(R.id.nombre);
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
@@ -77,18 +78,72 @@ public class MainActivity extends AppCompatActivity {
         correo = (TextView)findViewById(R.id.correo);
         celular = (TextView)findViewById(R.id.celular);
         perfil = (ImageView)findViewById(R.id.perfil);
+        tilOrigen = (TextInputLayout) findViewById(R.id.til_Origen);
+        tilTelCasa = (TextInputLayout) findViewById(R.id.til_TelCasa);
+        tilTelCelular = (TextInputLayout) findViewById(R.id.til_TelCelular);
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Día Euro");
 
-        databaseReference.addValueEventListener(new ValueEventListener() {
+        /*databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                displayComment();
+                //displayComment();
             }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });*/
+
+        telCasa.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                esTelefonoValido(String.valueOf(charSequence));
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        lugarOrigen.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                esLugarValido(String.valueOf(charSequence));
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+
+        telCelular.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                esCelularValido(String.valueOf(charSequence));
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
 
             }
         });
@@ -96,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         btn_post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                postComment();
+                validarDatos();
             }
         });
 
@@ -119,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });*/
 
-        btn_delete.setOnClickListener(new View.OnClickListener() {
+        /*btn_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 databaseReference.child(selectedKey)
@@ -136,9 +191,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
             }
-        });
+        });*/
 
-        displayComment();
+        //displayComment();
 
         btn_sign_out.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -172,6 +227,57 @@ public class MainActivity extends AppCompatActivity {
         showSignInOptions();
     }
 
+    private void validarDatos() {
+        String origen = tilOrigen.getEditText().getText().toString();
+        String telefono = tilTelCasa.getEditText().getText().toString();
+        String celular = tilTelCelular.getEditText().getText().toString();
+
+        boolean a = esLugarValido(origen);
+        boolean b = esTelefonoValido(telefono);
+        boolean c = esCelularValido(celular);
+
+        if (a && b && c) {
+            // OK, se pasa a la siguiente acción
+            postComment();
+            Toast.makeText(this, "Se guardó el registro", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private boolean esCelularValido(String celular) {
+        if (!Patterns.PHONE.matcher(celular).matches() || celular.length() != 10) {
+            tilTelCelular.setError("Teléfono inválido");
+            return false;
+        } else {
+            tilTelCelular.setError(null);
+        }
+
+        return true;
+    }
+
+    private boolean esTelefonoValido(String telefono) {
+        if (!Patterns.PHONE.matcher(telefono).matches() || telefono.length() != 10) {
+            tilTelCasa.setError("Teléfono inválido");
+            return false;
+        } else {
+            tilTelCasa.setError(null);
+        }
+
+        return true;
+    }
+
+    private boolean esLugarValido(String origen) {
+        //Pattern patron = Pattern.compile("^[a-zA-Z ]+$");
+        Pattern patron = Pattern.compile("^[[a-zA-Z ]\\p{Punct}]+$");
+        if (!patron.matcher(origen).matches() || origen.length() > 30) {
+            tilOrigen.setError("Lugar de origen inválido");
+            return false;
+        } else {
+            tilOrigen.setError(null);
+        }
+
+        return true;
+    }
+
     @Override
     protected void onStop() {
         if(adapter != null)
@@ -182,18 +288,19 @@ public class MainActivity extends AppCompatActivity {
     private void postComment() {
         String lugar = lugarOrigen.getText().toString();
         String tcasa = telCasa.getText().toString();
+        String tcelular = telCelular.getText().toString();
         name = (String) nombre.getText();
         email = (String) correo.getText();
 
-        Post post = new Post(lugar,tcasa,name,email);
+        Post post = new Post(lugar,tcasa,tcelular,name,email);
 
         databaseReference.push() //Usar el método para crear un id unico
         .setValue(post);
 
-        adapter.notifyDataSetChanged();
+        //adapter.notifyDataSetChanged();
     }
 
-    private void displayComment() {
+    /*private void displayComment() {
         options = new FirebaseRecyclerOptions.Builder<Post>()
                 .setQuery(databaseReference,Post.class)
                 .build();
@@ -228,7 +335,7 @@ public class MainActivity extends AppCompatActivity {
                 };
         adapter.startListening();
         recyclerView.setAdapter(adapter);
-    }
+    }*/
 
     private void showSignInOptions() {
         startActivityForResult(

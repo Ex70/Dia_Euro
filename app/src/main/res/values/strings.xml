@@ -5,4 +5,31 @@
     <string name="fb_login_protocol_scheme" translatable="false">fb2324376421206300</string>
     <string name="firebase_login">Acceder con Google</string>
 
+    <!-- Array de carreras -->
+    <string name="carrera">Selecciona una opción</string>
+    <string name="carrera01">ADMINISTRACIÓN DE EMPRESAS</string>
+    <string name="carrera02">ADMINISTRACIÓN DE HOTELES Y RESTAURANTES</string>
+    <string name="carrera03">ADMINISTRACIÓN DE NEGOCIOS INTERNACIONALES</string>
+    <string name="carrera04">AGRONEGOCIOS</string>
+    <string name="carrera05">ARQUITECTURA</string>
+    <string name="carrera06">BANCA Y FINANZAS</string>
+    <string name="carrera07">CIENCIAS DE LA COMUNICACIÓN</string>
+    <string name="carrera08">CIENCIAS DE LA EDUCACIÓN</string>
+    <string name="carrera09">CIENCIAS POLÍTICAS Y ADMINISTRACIÓN PÚBLICA</string>
+    <string name="carrera10">CONTADURÍA PÚBLICA</string>
+    <string name="carrera11">DERECHO</string>
+    <string name="carrera12">DISEÑO GRÁFICO Y COMUNICACIÓN DEPORTIVA</string>
+    <string name="carrera13">DISEÑO DE MODAS</string>
+    <string name="carrera14">EDUCACIÓN FÍSICA Y NUTRICIÓN DEPORTIVA</string>
+    <string name="carrera15">GASTRONOMÍA</string>
+    <string name="carrera16">INGENIERÍA MECATRÓNICA</string>
+    <string name="carrera17">INGENIERÍA EN SISTEMAS COMPUTACIONALES</string>
+    <string name="carrera18">INGENIERÍA INDUSTRIAL</string>
+    <string name="carrera19">MERCADOTECNIA</string>
+    <string name="carrera20">PERIODISMO Y MEDIOS DE INFORMACIÓN</string>
+    <string name="carrera21">PSICOLOGÍA</string>
+    <string name="carrera22">PUBLICIDAD Y RELACIONES PÚBLICAS</string>
+    <string name="carrera23">RELACIONES INDUSTRIALES</string>
+    <string name="carrera24">SISTEMAS COMPUTACIONALES ADMINISTRATIVOS</string>
+    <string name="carrera25">TURISMO</string>
 </resources>

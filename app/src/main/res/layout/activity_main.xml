@@ -47,60 +47,155 @@
         android:layout_below="@+id/correo"
         android:gravity="center" />
 
-    <com.google.android.material.textfield.TextInputLayout
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/euro_origen"
-            android:hint="Lugar de origen"
-            android:inputType="text"
-            android:singleLine="true"
+        <ImageView
+            android:id="@+id/img_origen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_place">
+        </ImageView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_Origen"
+            app:errorEnabled="true"
+            app:hintTextAppearance="@style/Hint"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/euro_origen"
+                android:hint="Lugar de origen"
+                android:inputType="text"
+                android:ems="10"
+                android:singleLine="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/euro_telCasa"
-            android:hint="Teléfono de casa"
-            android:inputType="number"
+        <ImageView
+            android:id="@+id/img_telcasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_telcasa">
+        </ImageView>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_TelCasa"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:counterOverflowTextAppearance="@style/CounterOverFlow"
+            app:counterTextAppearance="@style/Counter"
+            app:errorEnabled="true">
 
-    </com.google.android.material.textfield.TextInputLayout>
+            <EditText
+                android:id="@+id/euro_telCasa"
+                android:hint="Teléfono de casa"
+                android:inputType="phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
-    <com.google.android.material.textfield.TextInputLayout
-        app:counterEnabled="true"
-        app:counterMaxLength="10"
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:orientation="horizontal"
+        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <EditText
-            android:id="@+id/edt_content"
-            android:hint="Teléfono celular"
-            android:inputType="number"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <ImageView
+            android:id="@+id/img_telcelular"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:src="@drawable/ic_celular">
+        </ImageView>
 
-    </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_TelCelular"
+            app:counterEnabled="true"
+            app:counterMaxLength="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:counterOverflowTextAppearance="@style/CounterOverFlow"
+            app:counterTextAppearance="@style/Counter"
+            app:errorEnabled="true">
+
+            <EditText
+                android:id="@+id/euro_telCelular"
+                android:hint="Teléfono celular"
+                android:inputType="phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="16sp"
+        android:text="CARRERA DE INTERES 1"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/euro_telCelular"
+        android:gravity="center" />
+
+    <Spinner
+        android:id="@+id/SpinnerCarreras"
+        android:prompt="@string/carrera"
+        android:gravity="center"
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/Carreras">
+    </Spinner>
+
+    <!-- BOTONES -->
 
     <LinearLayout
         android:orientation="horizontal"
+        android:layout_gravity="center_vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/btn_salir"
+            android:text="SALIR"
+            android:layout_width="0dp"
+            style="@style/Widget.AppCompat.Button.Borderless.Colored"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"/>
 
         <Button
             android:id="@+id/btn_post"
             android:text="POST"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
+            android:layout_weight="1"
             android:layout_height="wrap_content"/>
 
-        <Button
+        <!--<Button
             android:id="@+id/btn_update"
             android:text="UPDATE"
             android:layout_width="wrap_content"
@@ -110,7 +205,7 @@
             android:id="@+id/btn_delete"
             android:text="DELETE"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"/>-->
 
 
     </LinearLayout>

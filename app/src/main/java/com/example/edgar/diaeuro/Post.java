@@ -1,47 +1,56 @@
 package com.example.edgar.diaeuro;
 
 public class Post {
-    private String title,content,nombre,correo;
+    private String Lugar,Telefono,Nombre,Correo,Celular;
 
     public Post() {
     }
 
-    public Post(String title, String content, String nombre, String correo) {
-        this.title = title;
-        this.content = content;
-        this.nombre = nombre;
-        this.correo = correo;
+    public Post(String lugar, String telefono, String celular, String nombre, String correo) {
+        this.Lugar = lugar;
+        this.Telefono = telefono;
+        this.Nombre = nombre;
+        this.Correo = correo;
+        this.Celular = celular;
     }
 
-    public String getTitle() {
-        return title;
+    public String getLugar() {
+        return Lugar;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setLugar(String lugar) {
+        Lugar = lugar;
     }
 
-    public String getContent() {
-        return content;
+    public String getTelefono() {
+        return Telefono;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setTelefono(String telefono) {
+        Telefono = telefono;
     }
 
     public String getNombre() {
-        return nombre;
+        return Nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        Nombre = nombre;
     }
 
     public String getCorreo() {
-        return correo;
+        return Correo;
     }
 
     public void setCorreo(String correo) {
-        this.correo = correo;
+        Correo = correo;
+    }
+
+    public String getCelular() {
+        return Celular;
+    }
+
+    public void setCelular(String celular) {
+        Celular = celular;
     }
 }

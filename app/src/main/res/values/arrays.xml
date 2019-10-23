@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="Carreras">
+        <item>@string/carrera01</item>
+        <item>@string/carrera02</item>
+        <item>@string/carrera03</item>
+        <item>@string/carrera04</item>
+        <item>@string/carrera05</item>
+        <item>@string/carrera06</item>
+        <item>@string/carrera07</item>
+        <item>@string/carrera08</item>
+        <item>@string/carrera09</item>
+        <item>@string/carrera10</item>
+        <item>@string/carrera11</item>
+        <item>@string/carrera12</item>
+        <item>@string/carrera13</item>
+        <item>@string/carrera14</item>
+        <item>@string/carrera15</item>
+        <item>@string/carrera16</item>
+        <item>@string/carrera17</item>
+        <item>@string/carrera18</item>
+        <item>@string/carrera19</item>
+        <item>@string/carrera20</item>
+        <item>@string/carrera21</item>
+        <item>@string/carrera22</item>
+        <item>@string/carrera23</item>
+        <item>@string/carrera24</item>
+        <item>@string/carrera25</item>
+    </string-array>
+</resources>
