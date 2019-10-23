@@ -27,4 +27,50 @@
         <item>@string/carrera24</item>
         <item>@string/carrera25</item>
     </string-array>
+    <string-array name="Escuelas">
+        <item>@string/escuela01</item>
+        <item>@string/escuela02</item>
+        <item>@string/escuela03</item>
+        <item>@string/escuela04</item>
+        <item>@string/escuela05</item>
+        <item>@string/escuela06</item>
+        <item>@string/escuela07</item>
+        <item>@string/escuela08</item>
+        <item>@string/escuela09</item>
+        <item>@string/escuela10</item>
+        <item>@string/escuela11</item>
+        <item>@string/escuela12</item>
+        <item>@string/escuela13</item>
+        <item>@string/escuela14</item>
+        <item>@string/escuela15</item>
+        <item>@string/escuela16</item>
+        <item>@string/escuela17</item>
+        <item>@string/escuela18</item>
+        <item>@string/escuela19</item>
+        <item>@string/escuela20</item>
+        <item>@string/escuela21</item>
+        <item>@string/escuela22</item>
+        <item>@string/escuela23</item>
+        <item>@string/escuela24</item>
+        <item>@string/escuela25</item>
+        <item>@string/escuela26</item>
+        <item>@string/escuela27</item>
+        <item>@string/escuela28</item>
+        <item>@string/escuela09</item>
+        <item>@string/escuela30</item>
+        <item>@string/escuela31</item>
+        <item>@string/escuela32</item>
+        <item>@string/escuela33</item>
+        <item>@string/escuela34</item>
+        <item>@string/escuela35</item>
+        <item>@string/escuela36</item>
+        <item>@string/escuela37</item>
+        <item>@string/escuela38</item>
+        <item>@string/escuela39</item>
+        <item>@string/escuela40</item>
+        <item>@string/escuela41</item>
+        <item>@string/escuela42</item>
+        <item>@string/escuela43</item>
+        <item>@string/escuela44</item>
+    </string-array>
 </resources>

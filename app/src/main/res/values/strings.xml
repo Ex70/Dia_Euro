@@ -4,6 +4,7 @@
     <string name="facebook_application_id" translatable="false">2324376421206300</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb2324376421206300</string>
     <string name="firebase_login">Acceder con Google</string>
+    <string name="terminos_condiciones">¿Aceptas términos y condiciones? <a href="http://ueh.edu.mx/privacidad3">Leer..</a></string>
 
     <!-- Array de carreras -->
     <string name="carrera">Selecciona una opción</string>
@@ -32,4 +33,51 @@
     <string name="carrera23">RELACIONES INDUSTRIALES</string>
     <string name="carrera24">SISTEMAS COMPUTACIONALES ADMINISTRATIVOS</string>
     <string name="carrera25">TURISMO</string>
+
+    <!-- Array de escuelas -->
+    <string name="escuela">Selecciona una opción</string>
+    <string name="escuela01">BACHILLERES TEOCELO</string>
+    <string name="escuela02">BACHILLERES UPAV</string>
+    <string name="escuela03">CBTIS NO. 13</string>
+    <string name="escuela04">CENTRO DE ESTUDIOS TECNOLÓGICOS INDUSTRIAL Y DE SERVICIOS 134</string>
+    <string name="escuela05">CENTRO EDUCATIVO SIGLO XXI</string>
+    <string name="escuela06">COBAEV COSAUTLÁN</string>
+    <string name="escuela07">COBAEV NO. 35</string>
+    <string name="escuela08">COLEGIO DE BACHILLERES ATENEA ÁNIMAS</string>
+    <string name="escuela09">COLEGIO EURO HISPANOAMERICANO</string>
+    <string name="escuela10">COLEGIO LAS HAYAS</string>
+    <string name="escuela11">COLEGIO MÉDICO</string>
+    <string name="escuela12">COLEGIO MORELOS</string>
+    <string name="escuela13">COLEGIO PREPARATORIO DE XALAPA</string>
+    <string name="escuela14">COLEGIO SANTO DOMINGO</string>
+    <string name="escuela15">COLEGIO TERESITAS A.C. TURNO MATUTINO</string>
+    <string name="escuela16">ESCUELA DE BACHILLERES ACELA SERVIN</string>
+    <string name="escuela17">ESCUELA DE BACHILLERES ALBERT EINSTEIN</string>
+    <string name="escuela18">ESCUELA DE BACHILLERES ARTÍCULO 3° CONSTITUCIONAL</string>
+    <string name="escuela19">ESCUELA DE BACHILLERES COATEPEC</string>
+    <string name="escuela20">ESCUELA DE BACHILLERES CONSTITUCIÓN DE 1917</string>
+    <string name="escuela21">ESCUELA DE BACHILLERES EXPERIMENTAL</string>
+    <string name="escuela22">ESCUELA DE BACHILLERES JOAQUÍN RAMIREZ CABAÑAS</string>
+    <string name="escuela23">ESCUELA DE BACHILLERES LIC. ANGEL CARVAJAL</string>
+    <string name="escuela24">ESCUELA DE BACHILLERES LIC. ANTONIO MARÍA DE RIVERA</string>
+    <string name="escuela25">ESCUELA DE BACHILLERES RICARDO FLORES MAGÓN (OFICIAL B)</string>
+    <string name="escuela26">ESCUELA DE BACHILLERES SIMÓ0N BOLIVAR</string>
+    <string name="escuela27">ESCUELA DE BACHILLERES UNIDAD Y TRABAJO</string>
+    <string name="escuela28">ESCUELA DE BACHILLERES XICO</string>
+    <string name="escuela29">ILUSTRE COLEGIO SANTIAGO DE COMPOSTELA</string>
+    <string name="escuela30">INSTITUTO CIENTÍFICO MOTOLINEA</string>
+    <string name="escuela31">INSTITUTO EDUCATIVO INSURGENTES</string>
+    <string name="escuela32">INSTITUTO EDUCATIVO XALAPEÑO</string>
+    <string name="escuela33">INSTITUTO FRANCISCO VITORIA</string>
+    <string name="escuela34">INSTITUTO FRANCISCO XAVIER ALEGRE</string>
+    <string name="escuela35">INSTITUTO MIGUEL DE CERVANTES SAAVEDRA</string>
+    <string name="escuela36">INSTITUTO TECNOLÓGICO ROOSEVELT</string>
+    <string name="escuela37">LICEO DE ARTES Y OFICIOS A.C. CHEDRAUI</string>
+    <string name="escuela38">TEBAEV ALTO LUCERO</string>
+    <string name="escuela39">TEBAEV MESA DE GUADALUPE</string>
+    <string name="escuela40">TEBAEV SANTA ANNA</string>
+    <string name="escuela41">TEBAEV TRAPICHE DEL ROSARIO</string>
+    <string name="escuela42">TELEBACHILLERATO LAS TRANCAS</string>
+    <string name="escuela43">   </string>
+    <string name="escuela44">MI BACHILLERATO NO APARECE EN LA LISTA</string>
 </resources>

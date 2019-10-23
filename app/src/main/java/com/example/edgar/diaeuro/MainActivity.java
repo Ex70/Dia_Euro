@@ -4,12 +4,16 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.method.LinkMovementMethod;
 import android.util.Patterns;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RadioGroup;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -33,6 +37,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
+import org.w3c.dom.Text;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -50,8 +56,10 @@ public class MainActivity extends AppCompatActivity {
     ImageView perfil;
     RecyclerView recyclerView;
     ViewGroup viewGroup;
-    String name,email,selectedKey;
+    String name,email,selectedKey,escuelaRespuesta,carreraRespuesta,carreraRespuesta2,beca="",sexo="";
     Post selectedPost;
+    Spinner escuela,carrera1,carrera2;
+    RadioGroup opciones,sexos;
 
     //Firebase
     FirebaseDatabase firebaseDatabase;
@@ -64,7 +72,6 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
         telCasa = (EditText)findViewById(R.id.euro_telCasa);
         lugarOrigen = (EditText)findViewById(R.id.euro_origen);
         telCelular = (EditText)findViewById(R.id.euro_telCelular);
@@ -73,14 +80,22 @@ public class MainActivity extends AppCompatActivity {
         //btn_delete = (Button)findViewById(R.id.btn_delete);
         btn_sign_out =(Button)findViewById(R.id.btn_sign_out);
         nombre = (TextView)findViewById(R.id.nombre);
-        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        opciones = (RadioGroup)findViewById(R.id.opciones_beca);
+        sexos = (RadioGroup)findViewById(R.id.opciones_sexo);
+        //recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        //recyclerView.setLayoutManager(new LinearLayoutManager(this));
         correo = (TextView)findViewById(R.id.correo);
         celular = (TextView)findViewById(R.id.celular);
         perfil = (ImageView)findViewById(R.id.perfil);
         tilOrigen = (TextInputLayout) findViewById(R.id.til_Origen);
         tilTelCasa = (TextInputLayout) findViewById(R.id.til_TelCasa);
         tilTelCelular = (TextInputLayout) findViewById(R.id.til_TelCelular);
+        escuela = (Spinner)findViewById(R.id.SpinnerEscuela);
+        carrera1= (Spinner)findViewById(R.id.SpinnerCarreras);
+        carrera2 = (Spinner)findViewById(R.id.SpinnerCarreras2);
+
+        TextView condiciones = (TextView) findViewById(R.id.terminos);
+        condiciones.setMovementMethod(LinkMovementMethod.getInstance());
 
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("Día Euro");
@@ -291,8 +306,23 @@ public class MainActivity extends AppCompatActivity {
         String tcelular = telCelular.getText().toString();
         name = (String) nombre.getText();
         email = (String) correo.getText();
+        escuelaRespuesta = escuela.getSelectedItem().toString();
+        carreraRespuesta = carrera1.getSelectedItem().toString();
+        carreraRespuesta2 = carrera2.getSelectedItem().toString();
+        if (opciones.getCheckedRadioButtonId() == R.id.radio_si) {
+            beca = "Si";
+            //Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        }else{
+            beca = "No";
+        }
+        if (sexos.getCheckedRadioButtonId() == R.id.radio_si) {
+            sexo = "Masculino";
+            //Toast.makeText(this, text, Toast.LENGTH_LONG).show();
+        }else{
+            sexo = "Femenino";
+        }
 
-        Post post = new Post(lugar,tcasa,tcelular,name,email);
+        Post post = new Post(lugar,tcasa,tcelular,name,email,escuelaRespuesta,carreraRespuesta,carreraRespuesta2,beca,sexo);
 
         databaseReference.push() //Usar el método para crear un id unico
         .setValue(post);

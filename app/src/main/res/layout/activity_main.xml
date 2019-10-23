@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,209 +8,387 @@
     android:background="@drawable/background"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/perfil"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_centerHorizontal="true"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:contentDescription="@string/app_name" />
-
-    <TextView
-        android:id="@+id/nombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/perfil"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/correo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/nombre"
-        android:gravity="center" />
-
-    <TextView
-        android:id="@+id/celular"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_light"
-        android:textSize="16sp"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/correo"
-        android:gravity="center" />
-
     <LinearLayout
-
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
         <ImageView
-            android:id="@+id/img_origen"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_place">
-        </ImageView>
+            android:id="@+id/perfil"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:contentDescription="@string/app_name" />
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_Origen"
-            app:errorEnabled="true"
-            app:hintTextAppearance="@style/Hint"
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/perfil"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/nombre"
+            android:gravity="center" />
+
+        <TextView
+            android:id="@+id/celular"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/correo"
+            android:gravity="center" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_sexo"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_sexo">
+            </ImageView>
+
+            <TextView
+                android:id="@+id/sexo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/holo_blue_light"
+                android:textSize="16sp"
+                android:layout_marginTop="10dp"
+                android:layout_gravity="center_horizontal"
+                android:text="SEXO" />
+        </LinearLayout>
+
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/opciones_sexo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_m"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:checked="true"
+                android:text="Masculino" />
+
+            <RadioButton
+                android:id="@+id/radio_f"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="Femenino" />
+        </RadioGroup>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/img_origen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_place">
+            </ImageView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_Origen"
+                app:errorEnabled="true"
+                app:hintTextAppearance="@style/Hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/euro_origen"
+                    android:hint="Lugar de origen"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:singleLine="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_telcasa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_telcasa">
+            </ImageView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_TelCasa"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/euro_telCasa"
+                    android:hint="Teléfono de casa"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_telcelular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:src="@drawable/ic_celular">
+            </ImageView>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/til_TelCelular"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:counterOverflowTextAppearance="@style/CounterOverFlow"
+                app:counterTextAppearance="@style/Counter"
+                app:errorEnabled="true">
+
+                <EditText
+                    android:id="@+id/euro_telCelular"
+                    android:hint="Teléfono celular"
+                    android:inputType="phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:text="ESCUELA DE PROCEDENCIA"
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/euro_telCelular"
+            android:gravity="center" />
+
+        <Spinner
+            android:id="@+id/SpinnerEscuela"
+            android:prompt="@string/escuela"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Escuelas">
+        </Spinner>
+
+
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:gravity="left"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/img_null"
+                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_null">
+            </ImageView>
+
             <EditText
-                android:id="@+id/euro_origen"
-                android:hint="Lugar de origen"
+                android:id="@+id/euro_escuela"
+                android:hint="NOMBRE DEL BACHILLERATO (En caso que no esté en la lista)"
+                android:textSize="9dp"
                 android:inputType="text"
-                android:ems="10"
-                android:singleLine="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+        </LinearLayout>
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/img_telcasa"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_telcasa">
-        </ImageView>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_TelCasa"
-            app:counterEnabled="true"
-            app:counterMaxLength="10"
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:counterOverflowTextAppearance="@style/CounterOverFlow"
-            app:counterTextAppearance="@style/Counter"
-            app:errorEnabled="true">
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:text="CARRERA DE INTERES 1"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/euro_telCelular"
+            android:gravity="center" />
 
-            <EditText
-                android:id="@+id/euro_telCasa"
-                android:hint="Teléfono de casa"
-                android:inputType="phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
-
-    <LinearLayout
-
-        android:orientation="horizontal"
-        android:layout_alignParentTop="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <ImageView
-            android:id="@+id/img_telcelular"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:src="@drawable/ic_celular">
-        </ImageView>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/til_TelCelular"
-            app:counterEnabled="true"
-            app:counterMaxLength="10"
+        <Spinner
+            android:id="@+id/SpinnerCarreras"
+            android:prompt="@string/carrera"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_gravity="center"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:counterOverflowTextAppearance="@style/CounterOverFlow"
-            app:counterTextAppearance="@style/Counter"
-            app:errorEnabled="true">
+            android:entries="@array/Carreras">
+        </Spinner>
 
-            <EditText
-                android:id="@+id/euro_telCelular"
-                android:hint="Teléfono celular"
-                android:inputType="phone"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textSize="16sp"
+            android:text="CARRERA DE INTERES 2"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/SpinnerCarreras"
+            android:gravity="center" />
 
-        </com.google.android.material.textfield.TextInputLayout>
-    </LinearLayout>
+        <Spinner
+            android:id="@+id/SpinnerCarreras2"
+            android:prompt="@string/carrera"
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/Carreras">
+        </Spinner>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@android:color/holo_blue_dark"
-        android:textSize="16sp"
-        android:text="CARRERA DE INTERES 1"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/euro_telCelular"
-        android:gravity="center" />
+        <TextView
+            android:id="@+id/becas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            android:text="¿Desea recibir información de becas?"
+            android:layout_marginTop="30dp"
+            android:layout_below="@+id/SpinnerCarreras2"
+            android:gravity="center" />
 
-    <Spinner
-        android:id="@+id/SpinnerCarreras"
-        android:prompt="@string/carrera"
-        android:gravity="center"
-        android:textAlignment="center"
-        android:layout_gravity="center"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:entries="@array/Carreras">
-    </Spinner>
+        <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/opciones_beca"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
 
-    <!-- BOTONES -->
+            <RadioButton
+                android:id="@+id/radio_si"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:checked="true"
+                android:text="Si" />
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_gravity="center_vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radio_no"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:text="No" />
+        </RadioGroup>
 
-        <Button
-            android:id="@+id/btn_salir"
-            android:text="SALIR"
-            android:layout_width="0dp"
-            style="@style/Widget.AppCompat.Button.Borderless.Colored"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
 
-        <Button
-            android:id="@+id/btn_post"
-            android:text="POST"
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"/>
+            <CheckBox
+                android:id="@+id/checkbox_terminos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center" />
 
-        <!--<Button
-            android:id="@+id/btn_update"
-            android:text="UPDATE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/terminos"
+                android:autoLink="web"
+                android:text="@string/terminos_condiciones"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+            </TextView>
+        </LinearLayout>
 
-        <Button
-            android:id="@+id/btn_delete"
-            android:text="DELETE"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>-->
+        <!-- BOTONES -->
 
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btn_sign_out"
+                android:text="SignOut"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"></Button>
 
-    <androidx.recyclerview.widget.RecyclerView
+            <!--<Button
+                android:id="@+id/btn_salir"
+                android:text="SALIR"
+                android:layout_width="0dp"
+                style="@style/Widget.AppCompat.Button.Borderless.Colored"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>-->
+
+            <Button
+                android:id="@+id/btn_post"
+                android:text="POST"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"/>
+
+            <!--<Button
+                android:id="@+id/btn_update"
+                android:text="UPDATE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <Button
+                android:id="@+id/btn_delete"
+                android:text="DELETE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>-->
+        </LinearLayout>
+    <!--<androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
@@ -221,6 +399,6 @@
         android:layout_centerInParent="true"
         android:enabled="false"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"></Button>
-
-</LinearLayout>
+        android:layout_height="wrap_content"></Button>-->
+    </LinearLayout>
+</ScrollView>
