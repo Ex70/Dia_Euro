@@ -4,7 +4,7 @@
     <string name="facebook_application_id" translatable="false">2324376421206300</string>
     <string name="fb_login_protocol_scheme" translatable="false">fb2324376421206300</string>
     <string name="firebase_login">Acceder con Google</string>
-    <string name="terminos_condiciones">¿Aceptas términos y condiciones? <a href="http://ueh.edu.mx/privacidad3">Leer..</a></string>
+    <string name="terminos_condiciones">¿Aceptas términos y condiciones? <a href="http://www.ueh.edu.mx/privacidad3">Leer..</a></string>
 
     <!-- Array de carreras -->
     <string name="carrera">Selecciona una opción</string>
