@@ -240,7 +240,7 @@
             </ImageView>
 
             <EditText
-                android:id="@+id/euro_escuela"
+                android:id="@+id/euro__escuela"
                 android:hint="NOMBRE DEL BACHILLERATO (En caso que no esté en la lista)"
                 android:textSize="9dp"
                 android:inputType="text"

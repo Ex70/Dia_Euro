@@ -80,4 +80,7 @@
     <string name="escuela42">TELEBACHILLERATO LAS TRANCAS</string>
     <string name="escuela43">   </string>
     <string name="escuela44">MI BACHILLERATO NO APARECE EN LA LISTA</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
