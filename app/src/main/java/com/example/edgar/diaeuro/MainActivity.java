@@ -255,6 +255,9 @@ public class MainActivity extends AppCompatActivity {
             // OK, se pasa a la siguiente acción
             postComment();
             Toast.makeText(this, "Se guardó el registro", Toast.LENGTH_LONG).show();
+            Intent inicio = new Intent(MainActivity.this,Inicio.class);
+            startActivity(inicio);
+            finish();
         }
     }
 

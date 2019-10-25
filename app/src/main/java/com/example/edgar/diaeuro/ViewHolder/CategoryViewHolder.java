@@ -12,7 +12,7 @@ import com.example.edgar.diaeuro.R;
 
 public class CategoryViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-    public TextView category_name:
+    public TextView category_name;
     public ImageView category_image;
 
     public ItemClickListener itemClickListener;
